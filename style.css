@@ -10,8 +10,7 @@ body{
 .keyboard {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1130px;
-    width: 100%;
+    width: 1130px;
     margin: 0 auto;
     border: solid 2px black;
     background-color: black;
@@ -21,6 +20,7 @@ body{
 }
 
 .key {
+  position: relative;
 box-sizing: border-box;    width: 50px;
     height: 50px;
     margin: 10px;
@@ -103,20 +103,64 @@ textarea:focus
   .key[data-key-name='Control'] {
     background-color: darkslategrey;
 
-    width: 95px;
+    width: 90px;
   }
   .key[data-key-name=' '] {
-    width: 460px;
+    width: 470px;
 }
-.key[data-key-name='Win'] , .key[data-key-name='Alt']   {
+.key[data-key-name='Meta'] {
+  background-color: darkslategrey;
+color: transparent;
+background-image: url(./windows.png);
+background-repeat: no-repeat;
+background-position: center;
+    background-size: 90%;
+}
+
+.key[data-key-name='Meta']::after{
+ 
+}
+
+.key[data-key-name='Alt']   {
     background-color: darkslategrey;
 
   }
+
   .key[data-key-name='ArrowUp'], .key[data-key-name='ArrowDown'], .key[data-key-name='ArrowRight'], .key[data-key-name='ArrowLeft']   {
     color: transparent;
+    background-color: darkslategrey;
+
 
   }
+  .key[data-key-name='ArrowLeft']::after {
+    font-size: 200%;
+    top: -15px;
+    position: absolute;
+    content: '\2190';
+    color: white;
+  }
+
+  .key[data-key-name='ArrowUp']::after {
+   
+    position: absolute;
+    content: '\2191';
+    color: white;
+  }
+  .key[data-key-name='ArrowDown']::after {
+   
+    position: absolute;
+    content: '\2193';
+    color: white;
+  }
+  .key[data-key-name='ArrowRight']::after {
+    font-size: 200%;
+    top: -15px;
+    position: absolute;
+    content: '\2192';
+    color: white;
+  }
 .key:hover {
+
     box-shadow: 0 0 10px 0 #93e02e inset, 0 0 10px 4px #93e02e;
 }
 
@@ -124,4 +168,8 @@ textarea:focus
     display: block;
     clear: both;
     width: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
